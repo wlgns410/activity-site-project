@@ -16,7 +16,6 @@ class UserManager(BaseUserManager):
         return user
 
 class User(AbstractBaseUser): 
-    kakao_id    = models.BigIntegerField(null=True)
     name        = models.CharField(max_length=200, null=True)
     profile_url = models.CharField(max_length=2000, null=True)
     email       = models.EmailField(unique=True)
