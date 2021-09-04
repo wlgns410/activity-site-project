@@ -186,4 +186,4 @@ sketch
 volumes/**
 
 .vscode    
-my_settings.py             
+.my_settings.py             
