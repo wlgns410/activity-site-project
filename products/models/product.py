@@ -4,7 +4,7 @@ from products.models import CreateTime, Category
 from users.models import User
 
 class Product(CreateTime):
-    Category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='products')
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='products')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     region = models.CharField(max_length=200, null=True)
