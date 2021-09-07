@@ -10,4 +10,4 @@ class Review(CreateTime):
     content = models.TextField()
 
     class Meta:
-        db_table = "comments"
+        db_table = "reviews"
