@@ -6,4 +6,4 @@ urlpatterns = [
     path('review', ReviewList.as_view()),
 ]
 
-urlpatterns = format_suffix_patterns(urlpatterns)
+# urlpatterns = format_suffix_patterns(urlpatterns)

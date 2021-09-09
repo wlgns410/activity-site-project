@@ -2,6 +2,7 @@ from .models.review import Review
 from .serializers import ReviewSerializer
 from rest_framework import generics
 from rest_framework import mixins
+from rest_framework.permissions import AllowAny
 
 
 class ReviewList(mixins.RetrieveModelMixin,
@@ -12,6 +13,7 @@ class ReviewList(mixins.RetrieveModelMixin,
                    
     queryset = Review.objects.all()
     serializer_class = ReviewSerializer
+    permission_classes = [AllowAny]
 
     # 생성하기
     def post(self, request, *args, **kwargs):
