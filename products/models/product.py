@@ -1,6 +1,7 @@
 from django.db import models
 
-from products.models import CreateTime, Category
+from products.models.create_time import CreateTime
+from products.models.category import Category
 from users.models import User
 
 class Product(CreateTime):
