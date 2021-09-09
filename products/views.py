@@ -12,8 +12,6 @@ class ReviewList(mixins.RetrieveModelMixin,
                 generics.GenericAPIView):
                    
     queryset = Review.objects.all()
-    serializer_class = ReviewSerializer
-    permission_classes = [AllowAny]
 
     # 생성하기
     def post(self, request, *args, **kwargs):
