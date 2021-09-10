@@ -1,9 +1,17 @@
+
 from django.urls import path
-from rest_framework.urlpatterns import format_suffix_patterns
-from products.views import ReviewList
+from products.views import ReviewList, CreateReviewList
+
+# schedule_detail = ReviewList.as_view({
+#     "get": "retrieve",
+#     "put": "update",
+#     "patch": "partial_update",
+#     "delete": "destroy",
+# })
+
 
 urlpatterns = [
-    path('review', ReviewList.as_view()),
+    path('review/<int:review_id>', ReviewList.as_view({'get': 'list', 'delete' : 'destroy'})),
+    path('review', CreateReviewList.as_view())
 ]
 
-# urlpatterns = format_suffix_patterns(urlpatterns)
