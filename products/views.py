@@ -1,10 +1,15 @@
+from django.core.exceptions import ValidationError
+from rest_framework.response import Response
+from products.models.product import Product
 from .models.review import Review
-from .serializers import ReviewSerializer
+from .models.like import Like
+from .serializers import LikeSerializer, ReviewSerializer
 
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import AllowAny
 from rest_framework import generics
 from rest_framework import mixins
+from rest_framework import status
 
 
 class ReviewList(ModelViewSet):
@@ -34,3 +39,25 @@ class ReviewDetail(mixins.RetrieveModelMixin,
     def delete(self, request, *args, **kwargs):
         return self.destroy(request, *args, **kwargs)
     
+
+class LikeView(generics.ListCreateAPIView, mixins.DestroyModelMixin):
+    serializer_class = LikeSerializer
+    queryset = Like.objects.all()
+    permission_classes = [AllowAny]
+
+    def get_queryset(self):
+        product = Product.objects.get(pk=self.kwargs['pk'])
+        return Like.objects.filter(product=product)
+
+    def perform_create(self, serializer, *args, **kwargs):
+        if self.get_queryset().exists():
+            self.get_queryset().delete()
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        serializer.save(product=Product.objects.get(pk=self.kwargs['pk']))
+
+    def delete(self, request, *args, **kwargs):
+        if self.get_queryset().exists():
+            self.get_queryset().delete()
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        else:
+            raise ValidationError("NONE_CONTENT")        
