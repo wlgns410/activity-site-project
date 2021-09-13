@@ -1,9 +1,15 @@
-from products.models.product import Product
-from rest_framework import serializers
 from rest_framework.serializers import ModelSerializer
 
+from .models.product import Product
 from .models.review import Review
 from .models.like import Like
+
+
+class ProductSerializer(ModelSerializer):
+
+    class Meta:
+        model = Product
+        fields = "__all__"
 
 class ReviewSerializer(ModelSerializer):
 
