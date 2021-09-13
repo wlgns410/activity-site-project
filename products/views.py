@@ -36,7 +36,7 @@ class ProductDetailView(mixins.DestroyModelMixin,
         queryset = Product.objects.all()
         category = self.request.query_params.get("category")
         if category:
-            queryset = Product.objects.select_related('category').filter(Q(product__category=category))
+            queryset = queryset.filter(Q(product__category=category)).select_related('category')
         return queryset
 
     # review 수정하기
