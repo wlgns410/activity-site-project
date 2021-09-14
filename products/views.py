@@ -4,18 +4,16 @@ from django.db.models   import Q
 from .models.product import Product
 from .models.review import Review
 from .models.like import Like
-from .models.category import Category
 
 from .serializers import LikeSerializer, ReviewSerializer,  ProductSerializer
 
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import AllowAny
+from rest_framework.filters import OrderingFilter
 from rest_framework import generics
 from rest_framework import mixins
 from rest_framework import status
-
-from products.models import category
 
 
 class ProductList(ModelViewSet):
@@ -23,6 +21,7 @@ class ProductList(ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
     permission_classes = [AllowAny]
+    
 
 class ProductDetailView(mixins.DestroyModelMixin,
                         mixins.RetrieveModelMixin,
@@ -31,6 +30,7 @@ class ProductDetailView(mixins.DestroyModelMixin,
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
     permission_classes = [AllowAny]
+    filter_backends = [OrderingFilter]
 
     def get_queryset(self, *args, **kwargs):
         queryset = Product.objects.all()
