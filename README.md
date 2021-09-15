@@ -16,7 +16,9 @@
 <br>
 
 ## 3. 엔드포인트 API 문서화
-https://documenter.getpostman.com/view/16450899/U16oo3QC
+링크 : (https://documenter.getpostman.com/view/16450899/U16oo3QC)
+
+<img width="1264" alt="스크린샷 2021-09-15 오후 3 45 15" src="https://user-images.githubusercontent.com/81137234/133383978-9b24f9e5-cd14-466f-b363-86d9e4e1033c.png">
 
 ---
 <br>
