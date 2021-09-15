@@ -1,4 +1,4 @@
-# django로 만든 프로젝트를 DRF로 변환한 프로젝트
+# iltal Django-Rest-Framework Project
 
 
 <br>
