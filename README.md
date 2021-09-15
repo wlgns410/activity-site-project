@@ -29,7 +29,7 @@
 
 ### 1) 회원가입
 - 헬퍼클래스인 UserManger를 사용하여 일반 user 객체를 생성하는 모델을 작성했습니다.
-- AbstractBaseUser를 상속하여 DRF의 기능인 password 자동 구현 기능을 사용하였습니다
+- AbstractBaseUser를 상속하여 DRF의 기능인 password 자동 구현 기능을 사용하였습니다.
 - AUTH_USER_MODEL을 settings.py에 입력하여 migration 시 발생할 수 있는 오류를 방지했습니다.
 - 회원가입 시 입력받은 데이터 검증을 위해 validated_data(유효성 검증)을 통해 User 객체를 생성했습니다.
 
@@ -37,15 +37,14 @@
 - rest_framework에서 제공하는 JWT token으로 사용자를 구분하였습니다.
 
 ### 3) Product CRUD 기능
-- 글 생성 시 id 값을 자동으로 부여하기 때문에 id 필드는 작성하지 않았습니다.
 - 객체지향적으로 코드를 작성하기 위해 model 디렉토리를 생성 후, class 객체를 나눠서 작성했습니다.
 - ViewSet에서 사용한 create메소드의 커스터마이징이 필요해 perform_create 메소드를 사용해 기존의 create 함수를 재정의하였습니다.
-- Filter, Q 객체를 사용하여 사용자가 조건에 맞는 결과를 조회 가능
-- Eager Loading(Selected_related) 사용하여 Query hit 감소
+- Filter, Q 객체를 사용하여 사용자가 조건에 맞는 결과를 조회 가능하게 만들었습니다.
+- Eager Loading(Selected_related) 사용하여 Query hit를 감소시켰습니다.
 
 ### 4) Like 기능
-- perform_create 메소드를 사용해  ViewSet의 create 함수를 재정의하였습니다.
-- 사용자가 이미 좋아요를 눌렀으면 좋아요 기록을 삭제하는 기능을 추가했습니다.
+- perform_create 메소드를 사용해  ViewSet의 create 함수를 create, put 메소드 기능을 하게 만들었습니다.
+- 사용자가 이미 좋아요를 눌렀으면 좋아요를 해제하도록 만들기 위해 delete를 사용했습니다.
 
 ---
 <br>
