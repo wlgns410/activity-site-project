@@ -18,7 +18,8 @@
 ## 3. 엔드포인트 API 문서화
 링크 : (https://documenter.getpostman.com/view/16450899/U16oo3QC)
 
-<img width="1264" alt="스크린샷 2021-09-17 오전 11 21 37" src="https://user-images.githubusercontent.com/81137234/133714048-d573bd75-6f1b-4fff-a6b6-228c12adf76a.png">
+<img width="1263" alt="스크린샷 2021-09-17 오전 11 24 00" src="https://user-images.githubusercontent.com/81137234/133714208-8f4e76dd-c694-4267-8ec9-33cd46663c73.png">
+
 
 ---
 <br>
