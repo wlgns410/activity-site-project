@@ -42,6 +42,7 @@
 - ViewSet에서 사용한 create메소드의 커스터마이징이 필요해 perform_create 메소드를 사용해 기존의 create 함수를 재정의하였습니다.
 - Filter, Q 객체를 사용하여 사용자가 조건에 맞는 결과를 조회 가능하게 만들었습니다.
 - Eager Loading(Selected_related) 사용하여 Query hit를 감소시켰습니다.
+- PageNumberPagination의 page_size_query_param 속성을 이용해 해당 페이지만큼 검색하는 기능을 생성하였습니다.
 
 ### 4) Like 기능
 - perform_create 메소드를 사용해  ViewSet의 create 함수를 create, put 메소드 기능을 하게 만들었습니다.
