@@ -6,7 +6,7 @@ from .models.review import Review
 from .models.like import Like
 
 from .serializers import LikeSerializer, ReviewSerializer,  ProductSerializer
-from .pagination import PostPageNumberPagination
+from .pagination import ProductPageNumberPagination
 
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
@@ -22,7 +22,7 @@ class ProductList(ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
     permission_classes = [AllowAny]
-    pagination_class = PostPageNumberPagination
+    pagination_class = ProductPageNumberPagination
     
 
 class ProductDetailView(mixins.DestroyModelMixin,
