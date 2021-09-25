@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'users',
     'products',
     'rest_framework',
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
+    # 'rest_auth'
 ]
 
 MIDDLEWARE = [
@@ -161,6 +162,7 @@ CORS_ALLOW_HEADERS = (
 
 SECRET_KEY = SECRET_KEY
 AUTH_USER_MODEL = 'users.User'
+# ACCOUNT_LOGOUT_ON_GET = True
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
